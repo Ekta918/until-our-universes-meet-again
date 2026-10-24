@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Until Our Universes Meet Again 💜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080612;--bg2:#120d28;--lav:#d9c7ff;--purple:#a98bff;--soft:#f0eaff;--muted:#b4a9cc;--glow:#b99bff;--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--hand:"Caveat","Segoe Script",cursive}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--soft);font-family:var(--serif);font-size:1.2rem;background:radial-gradient(ellipse at 15% 8%,#6e46b438,transparent 38%),radial-gradient(ellipse at 90% 60%,#4e358c30,transparent 42%),var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+#bar{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--purple),var(--lav));z-index:10;box-shadow:0 0 10px var(--glow)}
+.content{position:relative;z-index:1}
+:focus-visible{outline:2px solid var(--lav);outline-offset:3px}
+
+/* hero: the one orchestrated moment */
+header{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px}
+.moon{width:clamp(70px,16vw,110px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 34%,#fff,#e6d9ff 40%,#a98bff 100%);box-shadow:0 0 60px 10px #b99bff66,0 0 140px 40px #7c5cd633;margin-bottom:38px;opacity:0;animation:rise 2.2s .2s forwards}
+.moon:after{content:"";display:block;width:100%;height:100%;border-radius:50%;background:var(--bg);transform:translate(26%,-8%);box-shadow:none;mix-blend-mode:normal;clip-path:circle(46% at 50% 50%);opacity:.92}
+h1{font-weight:300;font-size:clamp(2.7rem,9vw,6rem);line-height:1.02;margin:0;letter-spacing:.01em}
+h1 em{display:block;color:var(--lav);font-style:italic;font-weight:300}
+.hl{opacity:0;animation:rise 2s forwards}.hl.a{animation-delay:.9s}.hl.b{animation-delay:1.6s}.hl.c{animation-delay:2.6s}.hl.d{animation-delay:3.4s}
+.intro{max-width:34em;line-height:1.9;color:var(--muted);font-size:1.25rem;margin:30px 0 0;font-style:italic}
+.hint{margin-top:50px;font-family:var(--hand);font-size:1.5rem;color:var(--lav)}
+.hint span{display:block;animation:bob 2s ease-in-out infinite}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+main{max-width:1000px;margin:auto;padding:0 22px 40px}
+
+/* letters */
+.pair{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(28px,6vw,70px);align-items:center;margin:70px 0;padding:clamp(24px,5vw,48px);border-radius:28px;background:linear-gradient(145deg,#241a5fcc,#0f0b1dcc);border:1px solid #c7afff30;box-shadow:0 30px 90px #0000004d}
+.pair.flip{grid-template-columns:1fr minmax(0,340px)}.pair.flip .frame{order:2}
+.frame{margin:0;position:relative;transform:rotate(-1.6deg);transition:transform .6s}
+.pair.flip .frame{transform:rotate(1.6deg)}.frame:hover,.pair.flip .frame:hover{transform:rotate(0)}
+.photo{position:relative;aspect-ratio:3/4;width:100%;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#3a2a7a,#150f2e);border:9px solid #f4eeff;border-bottom-width:38px;box-shadow:0 0 50px #a98bff40,0 20px 40px #0006}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(14px) saturate(.4) brightness(.6);transform:scale(1.08);transition:filter 3.2s ease,transform 3.2s ease}
+.frame.on .photo img{filter:none;transform:none}
+.photo .ph{position:absolute;inset:0;display:none;place-items:center;text-align:center;padding:20px;color:var(--lav);font-style:italic}
+.photo.missing .ph{display:grid}.photo.missing img{display:none}
+.frame figcaption{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--hand);font-size:1.45rem;color:#3b2a78;line-height:1}
+.names{margin:0 0 6px;font-weight:300;font-size:clamp(2.2rem,6vw,3.5rem);line-height:1.1}
+.tag{font-family:var(--hand);font-size:1.5rem;color:var(--purple);margin:0 0 22px}
+.message p{margin:0 0 1.15em;line-height:1.95;color:#ddd5ee}
+.message strong{color:#fff;font-weight:400;font-style:italic}
+.keep{list-style:none;margin:26px 0 0;padding:20px 0 0;border-top:1px solid #d9c7ff2e;display:grid;gap:8px;color:var(--muted);font-style:italic}
+.keep li:before{content:"✦ ";color:var(--purple);font-style:normal}
+.sign{margin-top:26px;font-family:var(--hand);font-size:1.9rem;color:var(--lav)}
+
+/* quiet interlude */
+.pause{text-align:center;padding:60px 10px;color:var(--muted);font-style:italic;font-size:1.35rem;line-height:2}
+
+/* farewell */
+.wish{text-align:center;padding:60px 10px 110px}
+.wish h2{font-weight:300;font-size:clamp(2.2rem,7vw,4.2rem);line-height:1.1;margin:0 0 28px}
+.wish p{max-width:32em;margin:0 auto 1.2em;line-height:2;color:var(--muted)}
+.final{color:var(--lav)!important;font-size:1.45rem;font-style:italic}
+.write{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+input{width:min(100%,360px);padding:14px 20px;border-radius:30px;border:1px solid #d9c7ff55;background:#a98bff14;color:var(--soft);font:1.05rem var(--serif)}
+input::placeholder{color:#a79bc4}
+button{padding:14px 26px;border-radius:30px;border:1px solid #d9c7ff73;background:#a98bff26;color:var(--soft);font:1.05rem var(--serif);cursor:pointer;transition:background .25s,transform .25s}
+button:hover{background:#a98bff4d;transform:translateY(-2px)}
+#reply{min-height:34px;margin-top:22px;font-family:var(--hand);font-size:1.6rem;color:var(--lav)}
+.lantern{position:fixed;bottom:-40px;z-index:5;pointer-events:none;text-align:center;font-family:var(--hand);font-size:1.15rem;color:#fff;max-width:160px;animation:float var(--d,12s) ease-in forwards}
+.lantern i{display:block;width:34px;height:44px;margin:0 auto 6px;border-radius:12px 12px 8px 8px;background:linear-gradient(#ffe6a8,#c79bff);box-shadow:0 0 30px 8px #d9b6ff99}
+@keyframes float{0%{transform:translate(0,0) scale(1);opacity:0}8%{opacity:1}100%{transform:translate(var(--x,20px),-115vh) scale(.5);opacity:0}}
+footer{padding:30px 20px 40px;text-align:center;color:#8c80a6;font:.95rem/1.8 var(--serif);font-style:italic}
+.heart{color:#c5a9ff}
+
+@media(max-width:760px){.pair,.pair.flip{grid-template-columns:1fr}.pair.flip .frame{order:0}.frame{max-width:300px;margin:0 auto}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.hl,.moon{opacity:1}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="content">
+
+<header>
+<div class="moon" aria-hidden="true"></div>
+<h1><span class="hl a">Until Our</span><em class="hl b">Universes Meet Again</em></h1>
+<p class="intro hl c">Some stories end before we are ready. This one is for the laughter, the glances, and the little moments we will carry long after the screen goes dark.</p>
+<div class="hint hl d">read slowly<span>↓</span></div>
+</header>
+
+<main>
+<section class="pair">
+<figure class="frame">
+<div class="photo"><img src="joong-dunk.jpeg" alt="Joong and Dunk" loading="lazy"><div class="ph">Add joong-dunk.jpeg<br>(3:4 photo)</div></div>
+<figcaption>our little universe</figcaption>
+</figure>
+<div>
+<h2 class="names">Joong &amp; Dunk</h2>
+<p class="tag">thank you for every moment 🌙</p>
+<div class="message">
+<p>I don’t quite know how to say goodbye to something that felt so warm. Thank you for the laughter, the chemistry, and the small, quiet moments that made this pairing feel like home.</p>
+<p>There were so many stories I still hoped to see, so many scenes I imagined. It hurts a little to let those hopes go, and it’s okay that it hurts. That ache only exists because it mattered.</p>
+<p><strong>Your work gave me memories I can return to whenever I miss this little universe.</strong> Wherever your paths lead, I hope they lead somewhere kind.</p>
+</div>
+<ul class="keep"><li>the laughter that made hard days lighter</li><li>the chemistry we will keep rewatching</li><li>the hope that never needed a promise</li></ul>
+<div class="sign">with love, from a fan who will remember</div>
+</div>
+</section>
+
+<div class="pause">Not every ending is a loss.<br>Some are just a place where the memories finally get to rest.</div>
+
+<section class="pair flip">
+<figure class="frame">
+<div class="photo"><img src="aou-boom.jpeg" alt="Aou and Boom" loading="lazy"><div class="ph">Add aou-boom.jpeg<br>(3:4 photo)</div></div>
+<figcaption>another little universe</figcaption>
+</figure>
+<div>
+<h2 class="names">Aou &amp; Boom</h2>
+<p class="tag">thank you for the joy 💫</p>
+<div class="message">
+<p>Thank you for the scenes that stayed with me, the moments that made me laugh out loud, and the joy of getting to cheer for the two of you together.</p>
+<p>I wish there had been more time and more stories. If you ever feel sad about the things we pictured, you’re not alone. Those hopes grew from real affection for your work.</p>
+<p><strong>I hope each of you finds new experiences, creative freedom, and plenty of reasons to smile.</strong> Thank you for being part of a chapter that meant so much to me.</p>
+</div>
+<ul class="keep"><li>the joy of cheering for you together</li><li>the scenes that stayed with me</li><li>a chapter I’m grateful to have found</li></ul>
+<div class="sign">thank you for the memories</div>
+</div>
+</section>
+
+<section class="wish">
+<h2>Some hopes can stay<br><i style="color:var(--lav)">softly in our hearts.</i></h2>
+<p>I will keep cheering for your separate journeys, and a small part of me will always hope our paths cross on screen again someday. Not an expectation, not a promise. Just a wish held gently beneath the stars.</p>
+<p class="final">Thank you for the stories. Thank you for the memories.<br>Until then, take care. 💜</p>
+<div class="write">
+<input id="wishIn" type="text" maxlength="70" placeholder="Write your own little wish…" aria-label="Write your own wish">
+<button id="wishBtn" type="button">Send it into the sky ✨</button>
+</div>
+<div id="reply" aria-live="polite"></div>
+</section>
+</main>
+
+<footer>Made with <span class="heart">♥</span> and a little code.<br>An unofficial fan-made tribute, wishing every artist well on their own path.</footer>
+</div>
+
+<script>
+/* starfield with occasional shooting star */
+const cv=document.getElementById('sky'),cx=cv.getContext('2d');let W,H,S=[],sh=null;
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;S=Array.from({length:Math.min(150,Math.floor(W*H/9000))},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+.3,p:Math.random()*6.28,s:Math.random()*.02+.005}))}
+addEventListener('resize',size);size();
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function draw(){cx.clearRect(0,0,W,H);for(const s of S){s.p+=s.s;cx.globalAlpha=.25+.6*Math.abs(Math.sin(s.p));cx.fillStyle='#fff';cx.beginPath();cx.arc(s.x,s.y,s.r,0,6.28);cx.fill()}
+if(!calm){if(!sh&&Math.random()<.003)sh={x:Math.random()*W*.8+W*.2,y:Math.random()*H*.4,l:0};if(sh){sh.x-=9;sh.y+=4;sh.l++;const g=cx.createLinearGradient(sh.x,sh.y,sh.x+90,sh.y-40);g.addColorStop(0,'#fff');g.addColorStop(1,'#fff0');cx.globalAlpha=1;cx.strokeStyle=g;cx.lineWidth=1.6;cx.beginPath();cx.moveTo(sh.x,sh.y);cx.lineTo(sh.x+90,sh.y-40);cx.stroke();if(sh.l>60)sh=null}}
+requestAnimationFrame(draw)}draw();
+
+/* reading progress */
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{bar.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%'},{passive:true});
+
+/* photos slowly come into focus, like a memory returning */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.45});
+document.querySelectorAll('.frame').forEach(f=>io.observe(f));
+document.querySelectorAll('.photo img').forEach(im=>{const miss=()=>im.parentElement.classList.add('missing');im.addEventListener('error',miss);if(im.complete&&!im.naturalWidth)miss()});
+
+/* wishes rise as lanterns */
+const input=document.getElementById('wishIn'),reply=document.getElementById('reply');
+const stock=['May your next chapters be kind to you. 💜','Some memories will always have a place in our hearts. ✦','Here’s to growth, happiness, and new beginnings. 🌙','And maybe, someday, another story together. ✨'];
+let n=0;
+function release(){const t=input.value.trim()||stock[n++%stock.length];const l=document.createElement('div');l.className='lantern';l.style.left=(15+Math.random()*70)+'%';l.style.setProperty('--x',(Math.random()*120-60)+'px');l.style.setProperty('--d',(10+Math.random()*5)+'s');l.innerHTML='<i></i>';l.appendChild(document.createTextNode(t));document.body.appendChild(l);setTimeout(()=>l.remove(),16000);reply.textContent='Your wish is on its way. 💜';input.value=''}
+document.getElementById('wishBtn').addEventListener('click',release);
+input.addEventListener('keydown',e=>{if(e.key==='Enter')release()});
+</script>
+</body>
+</html>
