@@ -88,7 +88,7 @@ footer{padding:30px 20px 40px;text-align:center;color:#8c80a6;font:.95rem/1.8 va
 <main>
 <section class="pair">
 <figure class="frame">
-<div class="photo"><img src="./joong-dunk.jpeg" alt="Joong and Dunk"><div class="ph">Add joong-dunk.jpeg<br>(3:4 photo)</div></div>
+<div class="photo"><img src="joong-dunk.jpeg" alt="Joong and Dunk" loading="lazy"><div class="ph">Add joong-dunk.jpeg<br>(3:4 photo)</div></div>
 <figcaption>our little universe</figcaption>
 </figure>
 <div>
@@ -108,7 +108,7 @@ footer{padding:30px 20px 40px;text-align:center;color:#8c80a6;font:.95rem/1.8 va
 
 <section class="pair flip">
 <figure class="frame">
-<div class="photo"><img src="./aou-boom.jpeg" alt="Aou and Boom"><div class="ph">Add aou-boom.jpeg<br>(3:4 photo)</div></div>
+<div class="photo"><img src="aou-boom.jpeg" alt="Aou and Boom" loading="lazy"><div class="ph">Add aou-boom.jpeg<br>(3:4 photo)</div></div>
 <figcaption>another little universe</figcaption>
 </figure>
 <div>
@@ -153,26 +153,10 @@ requestAnimationFrame(draw)}draw();
 const bar=document.getElementById('bar');
 addEventListener('scroll',()=>{bar.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%'},{passive:true});
 
-```javascript
 /* photos slowly come into focus, like a memory returning */
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){
-    e.target.classList.add('on');
-    io.unobserve(e.target);
-  }
-}),{threshold:0.1});
-
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.45});
 document.querySelectorAll('.frame').forEach(f=>io.observe(f));
-
-document.querySelectorAll('.photo img').forEach(im=>{
-  const miss=()=>im.parentElement.classList.add('missing');
-  im.addEventListener('error',miss);
-
-  if(im.complete && !im.naturalWidth){
-    miss();
-  }
-});
-```
+document.querySelectorAll('.photo img').forEach(im=>{const miss=()=>im.parentElement.classList.add('missing');im.addEventListener('error',miss);if(im.complete&&!im.naturalWidth)miss()});
 
 /* wishes rise as lanterns */
 const input=document.getElementById('wishIn'),reply=document.getElementById('reply');
