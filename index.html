@@ -153,10 +153,26 @@ requestAnimationFrame(draw)}draw();
 const bar=document.getElementById('bar');
 addEventListener('scroll',()=>{bar.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%'},{passive:true});
 
+```javascript
 /* photos slowly come into focus, like a memory returning */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.45});
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    e.target.classList.add('on');
+    io.unobserve(e.target);
+  }
+}),{threshold:0.1});
+
 document.querySelectorAll('.frame').forEach(f=>io.observe(f));
-document.querySelectorAll('.photo img').forEach(im=>{const miss=()=>im.parentElement.classList.add('missing');im.addEventListener('error',miss);if(im.complete&&!im.naturalWidth)miss()});
+
+document.querySelectorAll('.photo img').forEach(im=>{
+  const miss=()=>im.parentElement.classList.add('missing');
+  im.addEventListener('error',miss);
+
+  if(im.complete && !im.naturalWidth){
+    miss();
+  }
+});
+```
 
 /* wishes rise as lanterns */
 const input=document.getElementById('wishIn'),reply=document.getElementById('reply');
